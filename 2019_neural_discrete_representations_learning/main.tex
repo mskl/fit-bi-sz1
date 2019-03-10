@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{cite}
+
+% margins
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+
+% spacing
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+% fonts (the same as NIPS 2016)
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{phv}
+
+\title{%
+  Neural Discrete Representation Learning\cite{van2017neural} \\
+  \Large \href{https://arxiv.org/abs/1711.00937}{https://arxiv.org/abs/1711.00937}}
+\author{Matyáš Skalický (skalimat@fit.cvut.cz)}
+\date{\vspace{-1em}10. 3. 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Prerequisites}
+TLDR: If you know ML basics, there is nothing that you have to study in order to prepare for my talk.
+
+This paper is based on the model of Variational Autoencoder (VAE), which is built on the basis of the Autoencoder model. My presentation assumes that you are familiar with some of the machine learning vocabulary:
+\begin{description}
+    \item[Feed Forward Neural Networks] If you are not familiar with the model, that fuels the current revolution in machine learning, see for example the \href{https://natureofcode.com/book/chapter-10-neural-networks/}{chapter 10 of Daniel Shiffman's book - The Nature of Code}.
+    \item[Autoencoders] are basically neural networks compromised of an encoder and decoder, that try to squish the big input dimension into a smaller ``bottleneck'' layer and then try to reconstruct it back as the output layer. Real usecases include image compression, removing noise from images or even colouring black and white pictures. If you have not seen an autoencoder yet, you can have a look at \href{https://towardsdatascience.com/applied-deep-learning-part-3-autoencoders-1c083af4d798}{one of the great online articles}. But I suggest trying to build one yourself, it's pretty \href{https://blog.keras.io/building-autoencoders-in-keras.html}{easy and fun} in Keras.
+    \item[Variational Autoencoders (VAE)] combine the neural network architecture of autoencoders with a probabilistic model. This combination produces a powerful generative model, which is able to randomly sample from the latent space, or generate variations on an input image, from a continuous latent space. There are, again, many great tutorials on VAEs such as \href{https://jaan.io/what-is-variational-autoencoder-vae-tutorial/}{this}, or \href{https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf}{this}.
+\end{description}
+
+On Tuesday, Mato Choma is going to have a talk about the ``Tutorial on Variational Autoencoders''\cite{doersch2016tutorial} which should cover the topic of variational autoencoders. Also, there is a \href{https://courses.fit.cvut.cz/BI-SZ1/talks/2019/03/handout.pdf}{great talk} by Ondra Biza, on the paper ``Variational Inference: A Review for Statisticians''\cite{blei2017variational} which explains the math behind the variational autoencoders.
+
+\bibliography{main}{}
+\bibliographystyle{plain}
+
+\end{document}
