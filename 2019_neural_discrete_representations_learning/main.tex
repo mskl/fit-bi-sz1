@@ -33,7 +33,7 @@
 \maketitle
 
 \section{Introduction}
-The paper\cite{van2017neural} which I'm going to present on Tuesday describes the idea of using a variational autoencoder (VAE), but instead of having a continuous latent space, it has a discretisation step that creates discrete latent space embeddings. This makes a lot of sense, since in many real world scenarios, it simply does not make sense to interpolate between multiple categories. If we have a ``dog'' category and a ``chair'' category, it makes no sense to interpolate between the two.
+The paper\cite{van2017neural} which I'm going to present on Tuesday describes the idea of using a variational autoencoder (VAE), but instead of having a continuous latent space, it has a discretisation step that creates discrete latent space embeddings. This makes a lot of sense, since in many real world scenarios, it simply does not make sense to interpolate between multiple categories. If we have a dog and a chair, it makes no sense to interpolate between the two categories.
 
 Very often, you might see a shortcut VQ-VAE, which stands for Vector-Quantized Variational Autoencoder. In terms of the Variational Autoencoders, it basically means turning vector from continuous space into a vector of discrete values (finding a closest match from a codebook).
 
@@ -43,7 +43,7 @@ Very often, you might see a shortcut VQ-VAE, which stands for Vector-Quantized V
 This paper is based on the model of Variational Autoencoder (VAE), which is built on the basis of the Autoencoder model. My presentation assumes that you are familiar with some of the machine learning vocabulary:
 \begin{description}
     \item{Feed Forward Neural Networks} are the model, that fuels the current revolution in machine learning. If you are not familiar with them, see for example the \href{https://natureofcode.com/book/chapter-10-neural-networks/}{chapter 10} of Daniel Shiffman's book - The Nature of Code.
-    \item{Autoencoders} are basically neural networks compromised of an encoder and decoder, that try to squish the big input dimension into a smaller ``bottleneck'' layer and then try to reconstruct it back as the output layer. Real usecases include image compression, removing noise from images or even colouring black and white pictures. If you have not seen an autoencoder yet, you can have a look at one of the great \href{https://towardsdatascience.com/applied-deep-learning-part-3-autoencoders-1c083af4d798}{online articles}. But I suggest trying to build one yourself, it's pretty \href{https://blog.keras.io/building-autoencoders-in-keras.html}{easy and fun} in Keras.
+    \item{Autoencoders} are basically neural networks compromised of an encoder and decoder, that try to squish the input of a big dimension into a smaller ``bottleneck'' layer and then to reconstruct it back as the output layer. Real usecases include image compression, removing noise from images or even colouring black and white pictures. If you have not seen an autoencoder yet, you can have a look at one of the great \href{https://towardsdatascience.com/applied-deep-learning-part-3-autoencoders-1c083af4d798}{online articles}. But I suggest trying to build one yourself, it's pretty \href{https://blog.keras.io/building-autoencoders-in-keras.html}{easy and fun} in Keras.
     \item{Variational Autoencoders (VAE)} combine the neural network architecture of autoencoders with a probabilistic model. This combination produces a powerful generative model, which is able to randomly sample from the latent space, or generate variations on an input image, from a continuous latent space. There are, again, many great tutorials on VAEs such as \href{https://jaan.io/what-is-variational-autoencoder-vae-tutorial/}{this}, or \href{https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf}{this}.
 \end{description}
 
@@ -53,7 +53,7 @@ On Tuesday, Mato Choma is going to have a talk about the Tutorial on Variational
 \section{Implementation}
 \epigraph{What I cannot create, I do not understand.}{\textit{--- Richard Feynman}}
 
-If you are interested in a real working example of discrete representation learning, you can see on of the following implementations \footnote{The original code by DeepMind is surprise, surprise, not published.}:
+If you are interested in a real working example of discrete representation learning, you can see one of the following implementations \footnote{The original code by DeepMind is surprise, surprise, not published.}:
 \begin{description}
 	\item{PyTorch:} \href{https://github.com/nakosung/VQ-VAE}{https://github.com/nakosung/VQ-VAE} \\-- the shortest implementation that I have stumbled on.
 	\item{PyTorch:} \href{https://github.com/zalandoresearch/pytorch-vq-vae/blob/master/vq-vae.ipynb}{https://github.com/zalandoresearch/pytorch-vq-vae/blob/master/vq-vae.ipynb}\\-- Jupyter notebook with some great description.
@@ -62,10 +62,10 @@ If you are interested in a real working example of discrete representation learn
 \end{description}
 
 \section{Further reading after talk}
-There is also a followup paper called Theory and Experiments on Vector Quantized Autoencoders\cite{vaswani2017attention} which investigates an alternate training technique for VQ-VAE, inspired by its connection to the Expectation Maximization algorithm.
+There is also a followup paper called Theory and Experiments on Vector Quantized Autoencoders\cite{roy2018theory} which investigates an alternate training technique for VQ-VAE, inspired by its connection to the Expectation Maximization algorithm.
 
 \clearpage
 \bibliography{main}{}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 
 \end{document}
